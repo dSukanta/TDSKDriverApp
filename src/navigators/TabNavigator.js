@@ -21,6 +21,7 @@ function TabNavigator() {
           backgroundColor:'#000'
         },
         tabBarHideOnKeyboard: true,
+        tabBarActiveTintColor: colors.red,
       }}>
       <Tab.Screen
         name="Home"
@@ -46,8 +47,8 @@ function TabNavigator() {
           tabBarLabel: 'Orders',
           tabBarIcon: ({color, size}) => (
             <DynamicIcon
-              library={'materialicons'}
-              name="run-circle"
+              library={'materialcommunity'}
+              name="room-service"
               color={color}
               size={size}
             />

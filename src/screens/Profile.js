@@ -21,23 +21,23 @@ const Profile = ({route,navigation}) => {
     {
       id: 1,
       title: 'Name of Employee',
-      icon: <DynamicIcon library={'antdesign'} name={'user'} size={20} />,
+      icon: <DynamicIcon library={'antdesign'} name={'user'} size={20} color={'white'}/>,
     },
     {
       id: 2,
       title: 'Employee Id',
-      icon: <DynamicIcon library={'antdesign'} name={'idcard'} size={20} />,
+      icon: <DynamicIcon library={'antdesign'} name={'idcard'} size={20} color={'white'}/>,
     },
     {
       id:3,
       title: 'Ratings',
-      icon: <DynamicIcon library={'antdesign'} name={'staro'} size={20} />,
+      icon: <DynamicIcon library={'antdesign'} name={'staro'} size={20} color={'white'}/>,
       onPress:()=> navigation.navigate('Ratings')
     },
     {
       id: 4,
       title: 'Logout',
-      icon: <DynamicIcon library={'antdesign'} name={'logout'} size={20} />,
+      icon: <DynamicIcon library={'antdesign'} name={'logout'} size={20} color={'white'}/>,
       onPress:()=> Alert.alert('Confirm','Are you sure you want to log out?',[
         {
           text:'Yes',
@@ -60,12 +60,12 @@ const Profile = ({route,navigation}) => {
       </View>
       <View>
         {listOptions.map((item, i) => (
-          <TouchableOpacity onPress={item?.onPress? item.onPress: null} disabled={!item.onPress} key={i}>
-          <ListItem bottomDivider>
+          <TouchableOpacity onPress={item?.onPress? item.onPress: null} disabled={!item.onPress} key={i} style={styles.listContainer}>
+          <ListItem bottomDivider containerStyle={{backgroundColor:'transparent'}}>
             {item.icon? item.icon: null}
             <ListItem.Content>
-            <ListItem.Title>{item.title}</ListItem.Title>
-            <Text>{item.title}</Text>
+            <ListItem.Title style={[globalStyles.text,{fontSize:16}]}>{item.title}</ListItem.Title>
+            <Text style={globalStyles.text}>{item.title}</Text>
             </ListItem.Content>
           </ListItem>
           </TouchableOpacity>
@@ -90,4 +90,8 @@ const styles = StyleSheet.create({
     borderRadius: width / 3,
     resizeMode: 'cover',
   },
+  listContainer:{
+    width: width/1.2,
+    alignSelf: 'center',
+  }
 });

@@ -6,7 +6,7 @@ import {Card} from '@rneui/base';
 const OrderDetails = ({route, navigation}) => {
   const {order} = route?.params;
 
-  console.log(order, 'ord');
+  // console.log(order, 'ord');
 
   return (
     <View style={globalStyles.container}>
